@@ -186,7 +186,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # still needed?
-bindsym $mod+Shift+U exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown?' -B 'Yes, shutdown!' '/home/florian/.local/bin/i3lock && systemctl supend'"
+bindsym $mod+Shift+U exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown?' -B 'Yes, shutdown!' '~/.local/bin/i3lock && systemctl supend'"
 
 
 # Modes
@@ -251,7 +251,7 @@ bindsym $mod+d exec rofi -show combi
 
 
 
-set $Locker_saver /home/florian/.local/bin/i3lock
+set $Locker_saver ~/.local/bin/i3lock
 set $Locker i3lock -c "#2f343f" && sleep 1
 
 # custom autolock
@@ -260,7 +260,7 @@ bindsym $mod+shift+x exec $Locker_saver
 set $enable_auto_lock pgrep xautolock || ( \
     notify-send -- 'Enabling autolock!' &&  \
     xautolock -detectsleep \
-        -time 3 -locker "/home/florian/.local/bin/i3lock" \
+        -time 3 -locker "~/.local/bin/i3lock" \
         -notify 30 \
         -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" || \
     notify-send -u critical 'Autolock got disabled!' )
@@ -289,7 +289,7 @@ mode "$mode_autolock" {
 }
 bindsym $mod+Shift+o exec --no-startup-id $status_auto_lock, mode "$mode_autolock"
 
-# bindsym $mod+Shift+I exec systemctl suspend && /home/florian/.local/bin/i3lock
+# bindsym $mod+Shift+I exec systemctl suspend && ~/.local/bin/i3lock
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -330,13 +330,13 @@ bindsym XF86AudioPrev exec playerctl previous
 
 
 # Autostart
-# exec_always --no-startup-id /home/florian/.screenlayout/internal_hd.sh
-exec --no-startup-id /home/florian/.local/bin/autorandr -c --force
+# exec_always --no-startup-id ~/.screenlayout/internal_hd.sh
+exec --no-startup-id ~/.local/bin/autorandr -c --force
 
 
 exec compton -f
 
-exec_always feh --bg-scale /home/florian/Pictures/wallpaper.jpg 
+exec_always feh --bg-scale ~/Pictures/wallpaper.jpg 
 # exec --no-startup-id nm-applet
 exec Discord
 exec thunderbird
