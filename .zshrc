@@ -3,6 +3,7 @@
 export PATH=$PATH:$HOME/.local/bin
 
 alias i3config="vim $HOME/.config/i3/config"
+alias keymap='setxkbmap $XKBLAYOUT -option "$XKBOPTIONS" -model "$XKBMODEL"'
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

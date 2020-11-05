@@ -258,7 +258,7 @@ bindsym $mod+d exec rofi -show combi
 
 
 set $Locker_saver ~/.local/bin/i3lock
-set $Locker i3lock -c "#2f343f" && sleep 1
+set $Locker i3lock -c "#2f343f"
 
 # custom autolock
 bindsym $mod+shift+x exec $Locker_saver
