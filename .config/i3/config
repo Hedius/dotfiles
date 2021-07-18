@@ -33,8 +33,8 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -337,7 +337,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Autostart
 # exec_always --no-startup-id ~/.screenlayout/internal_hd.sh
-exec --no-startup-id ~/.local/bin/autorandr -c --force
+exec --no-startup-id autorandr -c --force
 
 
 exec compton -f
@@ -346,7 +346,7 @@ exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
 # exec --no-startup-id nm-applet
 exec Discord
 exec thunderbird
-exec teams
+# exec teams
 exec nextcloud --background
 exec flameshot
 exec ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox %u
@@ -356,3 +356,6 @@ exec dunst
 
 # flameshot shortcut
 bindsym $mod+shift+F1 exec flameshot gui
+
+
+for_window [title="Origin"] floating enable
