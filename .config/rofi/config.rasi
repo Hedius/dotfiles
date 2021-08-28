@@ -1,0 +1,7 @@
+configuration {
+	modi: "window,drun,run,ssh,windowcd,combi";
+	lines: 15;
+	show-icons: true;
+	combi-modi: "window,run,drun,ssh";
+	theme: "Arc-Dark";
+}
