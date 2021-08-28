@@ -3,14 +3,23 @@
 export PATH=$PATH:$HOME/.local/bin
 
 alias i3config="vim $HOME/.config/i3/config"
+alias swayconfig="vim $HOME/.config/sway/config"
+
+# fix for synergy
 alias keymap='setxkbmap $XKBLAYOUT -option "$XKBOPTIONS" -model "$XKBMODEL"'
+alias rotateLaptop='swaymsg "output eDP-1 transform 180"'
 
 # Path to your oh-my-zsh installation.
+
 export ZSH="$HOME/.oh-my-zsh"
 
+
+SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
-    eval $(ssh-agent -s) > /dev/null
+    # eval $(ssh-agent -s) > /dev/null
+    ssh-agent -s -a $SSH_AUTH_SOCK
 fi
+export SSH_AUTH_SOCK
 
 
 # Set name of the theme to load --- if set to "random", it will

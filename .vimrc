@@ -144,6 +144,7 @@ if has('gui_running')
 else
   set background=dark
   colorscheme gruvbox
+  set t_Co=256
 endif
 
 " Dark/Light mode

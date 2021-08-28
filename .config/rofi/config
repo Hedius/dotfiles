@@ -80,7 +80,7 @@ rofi.combi-modi:                     window,run,drun,ssh
 ! "Tokenize input string" Set from: Default
 ! rofi.tokenize:                       true
 ! "Monitor id to show on" Set from: Default
-! rofi.m:                              -5
+! rofi.m:                              -1
 ! "Margin between rows *DEPRECATED*" Set from: Default
 ! rofi.line-margin:                    2
 ! "Padding within rows *DEPRECATED*" Set from: Default
