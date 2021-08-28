@@ -7,7 +7,12 @@ alias swayconfig="vim $HOME/.config/sway/config"
 
 # fix for synergy
 alias keymap='setxkbmap $XKBLAYOUT -option "$XKBOPTIONS" -model "$XKBMODEL"'
-alias rotateLaptop='swaymsg "output eDP-1 transform 180"'
+alias invertLaptop='swaymsg "output eDP-1 transform 180"'
+alias resetLaptop='swaymsg "output eDP-1 transform 0"'
+
+alias compile-vmware='sudo vmware-modconfig --console --install-all'
+
+
 
 # Path to your oh-my-zsh installation.
 
