@@ -269,7 +269,7 @@ bindsym Print exec ~/repos/dotfiles/sway_screenshots/screenshot.sh
 ################################
 # LOCKSCREEN / AUTOLOCK
 ################################
-set $Locker swaylock -c "#2f343f"
+set $Locker pgrep -x swaylock || swaylock -c "#2f343f"
 
 # manual locking
 bindsym $mod+shift+x exec $Locker
@@ -279,8 +279,9 @@ set $enable_auto_lock pgrep swayidle || ( \
     notify-send -- 'Enabling autolock!' &&  \
     swayidle \
         timeout 240 'notify-send -u low -t 10000 -- "LOCKING screen in 60 seconds"' \
-        timeout 300 '$Locker' \
-        timeout 330 'swaymsg "output * dpms off"' \
+        timeout 300 'swaymsg "output * dpms off"' \
+        timeout 310 '$Locker' \
+        timeout 15 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
         resume 'swaymsg "output * dpms on"' \
         before-sleep 'playerctl pause' \
         before-sleep '$Locker' || \
