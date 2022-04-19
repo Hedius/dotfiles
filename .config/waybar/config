@@ -6,7 +6,8 @@
 
 	"modules-left": [
 		"sway/workspaces",
-		"custom/right-arrow-dark"
+		"custom/right-arrow-dark",
+        "sway/mode"
 	],
 	"modules-center": [
 		"custom/left-arrow-dark",
@@ -28,6 +29,9 @@
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"cpu",
+        "custom/left-arrow-light",
+		"custom/left-arrow-dark",
+        "temperature",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"battery",
@@ -61,6 +65,11 @@
 		"format": "{index}{name}"
 	},
 
+    "sway/mode": {
+        "format": " {}",
+        "max-length": 100
+	},
+
 	"clock#1": {
 		"format": "{:%a}",
 		"tooltip": false
@@ -74,6 +83,16 @@
 		"tooltip": false
 	},
 
+    "custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 1800,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather.sh",
+        "exec-if": "ping wttr.in -c1"
+    },
+    
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
 		"format-bluetooth": "{icon}  {volume}%",
@@ -93,9 +112,21 @@
 		"interval": 5,
 		"format": "Mem {}%"
 	},
+    "cpu": {
+		"interval": 5,
+		"format": "CPU {usage:2}% - {load} - {avg_frequency}GHz"
+	},
+
+    "temperature": {
+        "thermal-zone": 7,
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C ",
+	    "format": "{temperatureC}°C "
+    },
+
 	"cpu": {
 		"interval": 5,
-		"format": "CPU {usage:2}% - {load}"
+		"format": "CPU {usage:2}% - {load} - {avg_frequency}GHz"
 	},
 	"battery": {
 		"states": {
@@ -114,9 +145,18 @@
 	},
 	"disk": {
 		"interval": 5,
-		"format": "Disk {percentage_free:2}% {free}",
+		"format": "Disk {percentage_free:2}%",
 		"path": "/"
 	},
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": false
+    },
+
 	"tray": {
 		"icon-size": 10
 	}

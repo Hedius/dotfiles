@@ -24,12 +24,15 @@ window#waybar {
 }
 
 #workspaces,
+#mode,
 #clock.1,
 #clock.2,
 #clock.3,
+#custom-weather,
 #pulseaudio,
 #memory,
 #cpu,
+#temperature,
 #battery,
 #disk,
 #tray {
@@ -53,15 +56,25 @@ window#waybar {
 	padding: 2 3px;
 }
 
+#mode {
+	color: #fc320a;
+    padding: 0 10px;
+}
+
 #pulseaudio {
 	color: #268bd2;
 }
 #memory {
 	color: #2aa198;
 }
-#cpu {
+#cpu, #temperature {
 	color: #6c71c4;
 }
+
+#temperature.critical {
+    color: #fc320a;
+}
+
 #battery {
 	color: #859900;
 }
@@ -70,9 +83,11 @@ window#waybar {
 }
 
 #clock,
+#custome-weather,
 #pulseaudio,
 #memory,
 #cpu,
+#temperature,
 #battery,
 #disk {
 	padding: 0 10px;
