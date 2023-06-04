@@ -345,7 +345,7 @@ exec compton -f
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg 
 # exec --no-startup-id nm-applet
 exec Discord
-exec thunderbird
+# exec thunderbird
 # exec teams
 exec nextcloud --background
 exec flameshot

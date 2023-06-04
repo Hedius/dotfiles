@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/JetBrains/Toolbox/scripts
 
 alias i3config="vim $HOME/.config/i3/config"
 alias swayconfig="vim $HOME/.config/sway/config"

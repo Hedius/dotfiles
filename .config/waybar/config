@@ -29,6 +29,7 @@
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"cpu",
+        "custom/power_profile",
         "custom/left-arrow-light",
 		"custom/left-arrow-dark",
         "temperature",
@@ -112,29 +113,31 @@
 		"interval": 5,
 		"format": "Mem {}%"
 	},
-    "cpu": {
-		"interval": 5,
-		"format": "CPU {usage:2}% - {load} - {avg_frequency}GHz"
-	},
-
     "temperature": {
         "thermal-zone": 7,
         "critical-threshold": 80,
         "format-critical": "{temperatureC}°C ",
 	    "format": "{temperatureC}°C "
     },
-
 	"cpu": {
 		"interval": 5,
-		"format": "CPU {usage:2}% - {load} - {avg_frequency}GHz"
+		"format": "CPU {usage:2}%/{load}/{avg_frequency}GHz"
 	},
+    "custom/power_profile": {
+        "exec": "sleep 0.3 && /home/florian/.local/bin/powerprofilecycle.sh -m",
+        "interval": 120,
+        "on-click": "/home/florian/.local/bin/powerprofilecycle.sh",
+        "exec-on-event": true
+    },
 	"battery": {
+        "bat": "BAT0",
+        "interval": 30,
 		"states": {
 			"good": 95,
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
+		"format": "{icon} {capacity}% - {time}",
 		"format-icons": [
 			"",
 			"",
@@ -144,7 +147,7 @@
 		]
 	},
 	"disk": {
-		"interval": 5,
+		"interval": 30,
 		"format": "Disk {percentage_free:2}%",
 		"path": "/"
 	},
@@ -158,7 +161,7 @@
     },
 
 	"tray": {
-		"icon-size": 10
+		"icon-size": 20
 	}
 }
 
