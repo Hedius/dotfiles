@@ -19,12 +19,13 @@ alias compile-vmware='sudo vmware-modconfig --console --install-all'
 export ZSH="$HOME/.oh-my-zsh"
 
 
-SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
-    # eval $(ssh-agent -s) > /dev/null
-    ssh-agent -s -a $SSH_AUTH_SOCK
-fi
-export SSH_AUTH_SOCK
+# Systemd unit now.
+# SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
+#     # eval $(ssh-agent -s) > /dev/null
+#     ssh-agent -s -a $SSH_AUTH_SOCK
+# fi
+# export SSH_AUTH_SOCK
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -102,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-
+export EDITOR='vim'
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
