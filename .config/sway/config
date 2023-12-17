@@ -405,17 +405,15 @@ output "*" bg ~/Pictures/wallpaper.jpg fill
 
 # exec compton -f
 
-exec --no-startup-id nm-applet --indicator
+exec nm-applet --indicator
 exec Discord
 # exec thunderbird
-# exec teams
-exec --no-startup-id nextcloud --background
-# flameshot does not work with wayland :rip:
-# exec flameshot
+exec nextcloud --background
+exec flameshot
 exec ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox %u
 # exec steam
 exec dunst
-exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
+exec /usr/libexec/polkit-gnome-authentication-agent-1
 
 # flameshot shortcut
 bindsym $mod+shift+F1 exec flameshot gui

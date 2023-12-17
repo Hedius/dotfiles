@@ -124,9 +124,9 @@
 		"format": "CPU {usage:2}%/{load}/{avg_frequency}GHz"
 	},
     "custom/power_profile": {
-        "exec": "sleep 0.3 && /home/florian/.local/bin/powerprofilecycle.sh -m",
+        "exec": "sleep 0.3 && /home/defl/.local/bin/powerprofilecycle.sh -m",
         "interval": 120,
-        "on-click": "/home/florian/.local/bin/powerprofilecycle.sh",
+        "on-click": "/home/defl/.local/bin/powerprofilecycle.sh",
         "exec-on-event": true
     },
 	"battery": {

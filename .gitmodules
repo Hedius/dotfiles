@@ -1,3 +1,6 @@
 [submodule "sway_screenshots"]
 	path = sway_screenshots
 	url = https://github.com/yschaeff/sway_screenshots
+[submodule "powerprofilecycle"]
+	path = powerprofilecycle
+	url = https://gitlab.com/lassegs/powerprofilecycle.git

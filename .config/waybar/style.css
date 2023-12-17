@@ -32,6 +32,7 @@ window#waybar {
 #pulseaudio,
 #memory,
 #cpu,
+#custom-power_profile,
 #temperature,
 #battery,
 #disk,
@@ -67,7 +68,9 @@ window#waybar {
 #memory {
 	color: #2aa198;
 }
-#cpu, #temperature {
+
+#cpu,
+#temperature {
 	color: #6c71c4;
 }
 
@@ -75,7 +78,8 @@ window#waybar {
     color: #fc320a;
 }
 
-#battery {
+#battery,
+#custom-power_profile {
 	color: #859900;
 }
 #disk {
