@@ -420,8 +420,5 @@ exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1
 # flameshot shortcut
 bindsym $mod+shift+F1 exec flameshot gui
 
-#################################
-# BROKEN STUFF
-################################
-
-for_window [title="Origin"] floating enable
+# Window configs
+for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
