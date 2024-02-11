@@ -7,6 +7,7 @@ ln -svfr .vimrc -t $HOME
 LOCAL_BIN=~/.local/bin
 mkdir $LOCAL_BIN
 ln -svfr powerprofilecycle/powerprofilecycle.sh -t $LOCAL_BIN
+ln -svfr flameshot-upload -t $LOCAL_BIN
 
 cd .config
 # ln -svf $repoDir/.config/i3 -t $HOME/.config
