@@ -39,7 +39,7 @@ Plugin 'vim-airline/vim-airline-themes'
 "Color sheme
 Plugin 'morhetz/gruvbox'
 Plugin 'lifepillar/vim-solarized8'
-Plugin 'rakr/vim-togglebg'
+" Plugin 'rakr/vim-togglebg'
 
 "Searching
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -148,7 +148,7 @@ else
 endif
 
 " Dark/Light mode
-call togglebg#map("<F5>")
+" call togglebg#map("<F5>")
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8

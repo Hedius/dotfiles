@@ -329,6 +329,7 @@ mode "$mode_system" {
 }
 
 bindsym $mod+Pause mode "$mode_system"
+bindsym $mod+Shift+p mode "$mode_system"
 bindsym XF86PowerOff exec --no-startup-id systemctl suspend
 
 #################################
@@ -414,6 +415,8 @@ exec ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox %u
 # exec steam
 exec dunst
 exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec gammastep-indicator
+exec vorta -d
 
 # flameshot shortcut
 bindsym $mod+shift+F1 exec flameshot gui
